@@ -93,35 +93,7 @@ npm install -g vercel
 vercel
 ```
 
-### Netlify
 
-1. Push to GitHub.
-2. app.netlify.com/start → import the repo.
-3. Build command: `npm run build`, publish directory: `dist`.
-4. Deploy.
-
-Or via CLI:
-```bash
-npm install -g netlify-cli
-npm run build
-netlify deploy --prod --dir=dist
-```
-
-### GitHub Pages
-
-1. `vite.config.ts` already sets `base: './'` so assets resolve with relative
-   paths — this works for GitHub Pages out of the box.
-2. Build the site: `npm run build`.
-3. Push the contents of `dist/` to a `gh-pages` branch:
-   ```bash
-   npm install -D gh-pages
-   npx gh-pages -d dist
-   ```
-4. In repo Settings → Pages, set the source to the `gh-pages` branch.
-
-**Before deploying**, update these placeholder URLs to your real domain/profiles:
-- `index.html` — `og:url`, the `canonical` link
-- `src/data/profile.ts` — `links.github`, `links.linkedin`, `links.leetcode`
 
 ## Features
 
