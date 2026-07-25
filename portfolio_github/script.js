@@ -1,4 +1,5 @@
 (function(){
+  emailjs.init("YOUR_FULL_PUBLIC_KEY");
   // ---- theme ----
   const root = document.documentElement;
   const stored = localStorage.getItem('theme');
@@ -154,17 +155,29 @@
     });
   });
 
-  // ---- contact form -> mailto ----
-  document.getElementById('contactform').addEventListener('submit', function(e){
+  
+// ---- contact form ----
+document.getElementById("contactform").addEventListener("submit", function (e) {
     e.preventDefault();
-    const name = document.getElementById('cname').value;
-    const email = document.getElementById('cemail').value;
-    const msg = document.getElementById('cmsg').value;
-    const subject = encodeURIComponent('Portfolio inquiry from ' + (name || 'a recruiter'));
-    const body = encodeURIComponent(msg + '\\n\\n— ' + name + ' (' + email + ')');
-    window.location.href = 'mailto:nishandhineepalanivel13@gmail.com?subject=' + subject + '&body=' + body;
-    showToast('Opening your email client…');
-  });
+
+    emailjs.send(
+        "service_ornj19a",
+        "template_yrpnubo",
+        {
+            name: document.getElementById("cname").value,
+            email: document.getElementById("cemail").value,
+            message: document.getElementById("cmsg").value,
+        }
+    )
+    .then(function () {
+        showToast("Message sent successfully!");
+        document.getElementById("contactform").reset();
+    })
+    .catch(function (error) {
+        console.error(error);
+        showToast("Failed to send message.");
+    });
+});
 
   // ---- back to top ----
   document.getElementById('backtop').addEventListener('click', function(){
