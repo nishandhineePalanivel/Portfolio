@@ -1,5 +1,5 @@
 (function(){
-  emailjs.init("YOUR_FULL_PUBLIC_KEY");
+  emailjs.init("RZ6aFxstOQE8OtUB9QhWC");
   // ---- theme ----
   const root = document.documentElement;
   const stored = localStorage.getItem('theme');
