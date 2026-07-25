@@ -3,7 +3,7 @@ Hi, I'm Nishandhinee! 👋 Welcome to my portfolio where I showcase my projects,
 
 ## 🚀 Live Demo
 
-🔗 **Portfolio:** https://nishandhineepalanive.vercel.app/
+🔗 **Portfolio:** https://nishandhineeportfolio.vercel.app/
 
 ## 👩‍💻 About Me
 
