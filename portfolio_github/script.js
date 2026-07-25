@@ -157,26 +157,28 @@
 
   
 // ---- contact form ----
-document.getElementById("contactform").addEventListener("submit", function (e) {
+document.getElementById("contactform").addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    emailjs.send(
-        "service_ornj19a",
-        "template_yrpnubo",
-        {
-            name: document.getElementById("cname").value,
-            email: document.getElementById("cemail").value,
-            message: document.getElementById("cmsg").value,
-        }
-    )
-    .then(function () {
+    try {
+        const response = await emailjs.send(
+            "service_ornj19a",
+            "template_yrpnubo",
+            {
+                name: document.getElementById("cname").value,
+                email: document.getElementById("cemail").value,
+                message: document.getElementById("cmsg").value,
+            }
+        );
+
+        console.log("SUCCESS:", response);
         showToast("Message sent successfully!");
         document.getElementById("contactform").reset();
-    })
-    .catch(function (error) {
-        console.error(error);
-        showToast("Failed to send message.");
-    });
+
+    } catch (error) {
+        console.log("EMAILJS ERROR:", error);
+        alert(JSON.stringify(error));
+    }
 });
 
   // ---- back to top ----
