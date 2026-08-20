@@ -80,7 +80,7 @@
   document.querySelectorAll('.reveal').forEach(function(el){ revealIO.observe(el); });
 
   // ---- typewriter ----
-  const roles = ['Frontend Developer','Embedded Systems Enthusiast','Electronics & Communication Engineer'];
+  const roles = ['Web Developer','Embedded Systems Enthusiast','Electronics & Communication Engineer'];
   const typedEl = document.getElementById('typed');
   let ri=0, ci=0, deleting=false;
   function typeStep(){
